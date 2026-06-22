@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "Vietnamese CCCD format validation API",
   "main": "src/server.js",
+  "bin": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "build": "pkg . --output api-check-cccd --compress Brotli"
   },
   "keywords": [],
+  "pkg": {
+    "assets": [".env"],
+    "targets": ["node20-win-x64"],
+    "scripts": ["src/**/*.js"],
+    "outputPath": "./"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
